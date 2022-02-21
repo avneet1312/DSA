@@ -9,7 +9,7 @@ int main(){
                         // ptr = adress as *ptr=arr so ptr=&arr
                         // &arr gives adress of array 
    for (int i=0;i<3;i++){
-       cout<<*ptr<<endl;
+       cout<<*(arr+i)<<endl;
        ptr++;
    }
 }
