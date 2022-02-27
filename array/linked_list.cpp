@@ -35,6 +35,17 @@ void display(node *head){
     }
     cout<<"NULL"<<endl;
 }
+bool search(node *head,int key){
+    node *temp=head;
+    while(temp!=NULL){
+        if(temp->data==key){
+            
+            return true;
+        }
+        temp=temp->next;
+    }
+    return false;
+}
 int main(){
     node *head=NULL;
     insertattail(head,1);
@@ -42,6 +53,7 @@ int main(){
     insertattail(head,3);
     insertathead(head,4);
     display(head);
+    cout<<search(head,5)<<endl;
 
     return 0;
 
