@@ -10,6 +10,11 @@ class node{
     }
     
 };
+void insertathead(node *&head, int val){
+    node *n=new node(val);
+    n->next=head;
+    head=n;
+}
 void insertattail(node *&head , int val){
     node *n=new node(val);
     if(head==NULL){
@@ -35,7 +40,9 @@ int main(){
     insertattail(head,1);
     insertattail(head,2);
     insertattail(head,3);
+    insertathead(head,4);
     display(head);
+
     return 0;
 
 }
