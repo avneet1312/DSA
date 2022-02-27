@@ -46,6 +46,11 @@ bool search(node *head,int key){
     }
     return false;
 }
+void deleteathead(node *&head){
+    node *todelete=head;
+    head=head->next;
+    delete todelete;
+}
 void deletion(node *head, int val){
     node *temp=head;
     while(temp->next->data!=val){
@@ -63,7 +68,8 @@ int main(){
     insertathead(head,4);
     display(head);
     //cout<<search(head,5)<<endl;
-    deletion(head,3);
+    //deletion(head,3);
+    deleteathead(head);
     display(head);
 
 
