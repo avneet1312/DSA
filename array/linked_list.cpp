@@ -60,6 +60,18 @@ void deletion(node *head, int val){
     temp->next=temp->next->next;
     delete todelete;
 }
+node *reverse(node *&head){
+    node *prevptr=NULL;
+    node *currptr=head;
+    node *nextptr;
+    while(currptr!=NULL){
+        nextptr=currptr->next;
+        currptr->next=prevptr;
+        prevptr=currptr;
+        currptr=nextptr;
+    }
+    return prevptr;
+}
 int main(){
     node *head=NULL;
     insertattail(head,1);
@@ -69,8 +81,9 @@ int main(){
     display(head);
     //cout<<search(head,5)<<endl;
     //deletion(head,3);
-    deleteathead(head);
-    display(head);
+    //deleteathead(head);
+    node *newhead=reverse(head);
+    display(newhead);
 
 
     return 0;
