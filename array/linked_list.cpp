@@ -72,6 +72,15 @@ node *reverse(node *&head){
     }
     return prevptr;
 }
+node *reverserecursive(node *&head){
+    if(head==NULL||head->next==NULL){
+        return head;
+    }
+    node *newhead=reverserecursive(head->next);
+    head->next->next=head;
+    head->next=NULL;
+    return newhead;
+}
 int main(){
     node *head=NULL;
     insertattail(head,1);
@@ -82,7 +91,8 @@ int main(){
     //cout<<search(head,5)<<endl;
     //deletion(head,3);
     //deleteathead(head);
-    node *newhead=reverse(head);
+    //node *newhead=reverse(head);
+    node *newhead=reverserecursive(head);
     display(newhead);
 
 
